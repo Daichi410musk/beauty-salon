@@ -1,143 +1,239 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>美容室 fino（富山大学前）</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HAIRSALON</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Noto Sans JP', sans-serif;
-      background: #fdfdfd;
+      margin: 0;
+      font-family: 'Noto Serif JP', serif;
+      background-color: #fffaf5;
       color: #333;
-      line-height: 1.6;
     }
-
     header {
-      background: #ffe4e1;
+      background-color: white;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #b28b67;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #444;
+      font-size: 15px;
+    }
+    .hero {
+      background-image: url('https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg');
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       text-align: center;
-      padding: 2.5rem 1rem;
-    }
-
-    header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: #ff69b4;
       color: white;
-      padding: 0.8rem 1.5rem;
+      padding: 0 20px;
+    }
+    .hero h1 { font-size: 40px; margin-bottom: 15px; }
+    .hero p { font-size: 18px; }
+    .cta-btn {
+      background-color: #b28b67;
+      color: white;
+      padding: 12px 30px;
       border-radius: 30px;
+      margin-top: 20px;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
     }
-
-    .btn:hover {
-      background-color: #ff1493;
+    .cta-btn:hover {
+      background-color: #a77f5c;
     }
-
-    .section {
-      padding: 2rem 1.5rem;
-      max-width: 800px;
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
       margin: auto;
+      text-align: center;
     }
-
-    .points ul {
-      list-style: none;
-      margin-top: 1rem;
+    .menu-items, .staff-members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
     }
-
-    .points li {
-      padding-left: 1.5em;
-      position: relative;
-      margin-bottom: 0.8rem;
+    .menu-item, .staff {
+      width: 220px;
     }
-
-    .points li::before {
-      content: "✅";
-      position: absolute;
-      left: 0;
-      color: #ff69b4;
+    .menu-item img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
-
-    .access p {
-      margin-bottom: 1rem;
+    .staff img {
+      width: 100%;
+      border-radius: 8px;
     }
-
+    .gallery img {
+      width: 30%;
+      margin: 10px;
+      border-radius: 8px;
+    }
+    .campaign {
+      background-color: #fff0e0;
+      padding: 40px 20px;
+      margin-top: 40px;
+      border: 2px dashed #d4a373;
+    }
+    .campaign h3 { margin-top: 0; }
+    .qr {
+      margin-top: 20px;
+    }
+    .qr img {
+      width: 150px;
+    }
+    footer {
+      background-color: #f5f0ea;
+      text-align: center;
+      padding: 40px 20px;
+      color: #666;
+      margin-top: 60px;
+    }
+    footer a {
+      color: #b28b67;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 18px;
+    }
     iframe {
       width: 100%;
       height: 300px;
       border: 0;
-      border-radius: 10px;
+      margin-top: 20px;
     }
-
-    footer {
-      text-align: center;
-      background: #eee;
-      padding: 1.2rem;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-    }
-
-    footer a {
-      color: #ff1493;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      .btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.95rem;
+    @media (max-width: 768px) {
+      .menu-item, .staff, .gallery img {
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>美容室 fino</h1>
-    <p>富山大学から徒歩5分。学生限定割引あり！</p>
-    <a class="btn" href="https://line.me/ti/p/●●●●" target="_blank">LINEで予約する</a>
+    <div class="logo">HAIRSALON</div>
+    <nav>
+      <a href="#menu">メニュー</a>
+      <a href="#staff">スタッフ</a>
+      <a href="#access">アクセス</a>
+    </nav>
   </header>
 
-  <section class="section points">
-    <h2>✨ 選ばれる理由</h2>
-    <ul>
-      <li>大学生限定カット割：2,000円～</li>
-      <li>インスタ映えの内装と自然光</li>
-      <li>気さくな女性スタッフが対応</li>
-      <li>LINEで簡単予約＆相談OK</li>
-    </ul>
+  <div class="hero">
+    <h1>ナチュラルで居心地のいい美容室</h1>
+    <p>女子大生や主婦に人気の空間でキレイを叶えます</p>
+    <a href="#access" class="cta-btn">今すぐ予約する</a>
+  </div>
+
+  <section id="menu">
+    <h2>メニュー</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/3993441/pexels-photo-3993441.jpeg" alt="cut">
+        <h3>カット</h3><p>骨格に合わせたナチュラルスタイルに。</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/3993442/pexels-photo-3993442.jpeg" alt="color">
+        <h3>カラー</h3><p>透明感あるトレンドカラーを提案。</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/3993443/pexels-photo-3993443.jpeg" alt="treatment">
+        <h3>トリートメント</h3><p>髪の内部から補修し、潤いとツヤを。</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg" alt="perm">
+        <h3>パーマ</h3><p>自然な動きでこなれ感を演出。</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/3993445/pexels-photo-3993445.jpeg" alt="spa">
+        <h3>ヘッドスパ</h3><p>癒しの頭皮ケアでリフレッシュ。</p>
+      </div>
+    </div>
   </section>
 
-  <section class="section access" id="access">
-    <h2>📍 アクセス</h2>
-    <p>富山県富山市●●●●●●</p>
-    <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy"></iframe>
+  <section id="staff">
+    <h2>スタッフ紹介</h2>
+    <div class="staff-members">
+      <div class="staff">
+        <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="staff1">
+        <h4>Yui（スタイリスト）</h4>
+        <p>柔らかい雰囲気と丁寧な接客が魅力です。</p>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+      <div class="staff">
+        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="staff2">
+        <h4>Akari（カラーリスト）</h4>
+        <p>透明感カラーが得意です。ご相談ください！</p>
+      </div>
+      <div class="staff">
+        <img src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg" alt="staff3">
+        <h4>Miku（アシスタント）</h4>
+        <p>韓国風巻き髪が得意です。</p>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h2>店内の雰囲気</h2>
+    <img src="https://images.pexels.com/photos/853427/pexels-photo-853427.jpeg" alt="salon1">
+    <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg" alt="salon2">
+    <img src="https://images.pexels.com/photos/3993446/pexels-photo-3993446.jpeg" alt="salon3">
+    <img src="https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg" alt="salon-outside">
+  </section>
+
+  <section class="campaign">
+    <h3>🌸 春のキャンペーン実施中！</h3>
+    <p>今なら新規ご来店のお客様に限り「トリートメント無料体験」実施中。</p>
+    <p>このチャンスをお見逃しなく！</p>
+    <div class="qr">
+      <p>▼ LINEで予約も可能です ▼</p>
+      <img src="https://qr-official.line.me/sid/L/1234567890.png" alt="LINE予約QRコード">
+    </div>
+  </section>
+
+  <section id="access">
+    <h2>アクセス・予約</h2>
+    <p>📍 東京都〇〇区〇〇町1-2-3<br>🚇 最寄り駅から徒歩3分</p>
+    <p>📞 ご予約は：<strong>03-1234-5678</strong></p>
+    <p>🔗 <a href="#">ホットペッパービューティーから予約する</a></p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.984181370118!2d139.70340031525898!3d35.65858078019943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ca7db9c18e9%3A0x2f6d2f6f680b1cbf!2z5p2x5Lqs6YO95aSn5a2m5qCh!5e0!3m2!1sja!2sjp!4v1627351066805!5m2!1sja!2sjp" allowfullscreen></iframe>
   </section>
 
   <footer>
-    <p>📱 今すぐLINEで予約 → <a href="https://line.me/ti/p/●●●●" target="_blank">こちら</a></p>
-    <p>© 2025 美容室 fino</p>
+    <p>&copy; 2025 HAIRSALON. All Rights Reserved.</p>
+    <p>営業時間：10:00〜20:00｜定休日：火曜日</p>
+    <p>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-line"></i></a>
+    </p>
   </footer>
 </body>
 </html>
+
 
