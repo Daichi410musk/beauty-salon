@@ -1,231 +1,175 @@
-# Save the improved HTML code into a single file for the user to upload to GitHub Pages.
-html_code = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HAIRSALON</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トヤマの隠れ家美容室</title>
   <style>
-    * { box-sizing: border-box; }
     body {
-      margin: 0;
-      font-family: 'Noto Serif JP', serif;
-      background-color: #fffaf5;
+      font-family: sans-serif;
+      background-color: #f9f7f3;
       color: #333;
+      margin: 0;
+      padding: 0;
     }
     header {
-      background-color: white;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 60px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
-      z-index: 100;
+      background-color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #eee;
     }
-    .logo {
-      font-size: 20px;
-      font-weight: bold;
-      color: #b28b67;
-    }
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #444;
-      font-size: 15px;
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #b88c4c;
     }
     .hero {
-      background-image: url('https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg');
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .hero img {
+      max-width: 100%;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .btns a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      background-color: #d4b48c;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .menu {
+      padding: 2rem 1rem;
+      background-color: #fff;
+      text-align: center;
+    }
+    .menu h2 {
+      color: #b88c4c;
+      margin-bottom: 2rem;
+    }
+    .menu-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .menu-item {
       background-size: cover;
       background-position: center;
-      height: 500px;
+      width: 200px;
+      height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      color: white;
-      padding: 0 20px;
-    }
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 15px;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 10px 20px;
-      border-radius: 8px;
-    }
-    .hero p {
-      font-size: 18px;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 8px 16px;
-      border-radius: 8px;
-    }
-    .cta-btn {
-      background-color: #b28b67;
-      color: white;
-      padding: 12px 30px;
-      border-radius: 30px;
-      margin-top: 20px;
-      text-decoration: none;
+      color: #fff;
       font-weight: bold;
-      transition: 0.3s;
+      border-radius: 1rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     }
-    .cta-btn:hover {
-      background-color: #a77f5c;
-    }
-    section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: auto;
+    .stylists {
+      padding: 2rem 1rem;
+      background-color: #f5f2eb;
       text-align: center;
     }
-    .menu-items {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
+    .stylists h2 {
+      color: #b88c4c;
+      margin-bottom: 2rem;
     }
-    .menu-item {
-      flex: 1 1 18%;
-      background-color: white;
-    }
-    .menu-item img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    .staff-members {
+    .stylist-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 40px;
+      gap: 1rem;
     }
-    .staff {
-      width: 220px;
-    }
-    .staff img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .gallery {
+    .stylist {
+      background-size: cover;
+      background-position: center;
+      width: 200px;
+      height: 200px;
+      border-radius: 1rem;
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
+      align-items: flex-end;
+      justify-content: center;
+      color: #fff;
+      padding: 0.5rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     }
-    .gallery img {
-      width: 23%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    .campaign {
-      background-color: #fff0e0;
-      padding: 40px 20px;
-      margin-top: 40px;
-      border: 2px dashed #d4a373;
-    }
-    .campaign h3 { margin-top: 0; }
-    .qr {
-      margin-top: 20px;
-    }
-    .qr img {
-      width: 150px;
-    }
-    footer {
-      background-color: #f5f0ea;
+    .map {
+      padding: 2rem 1rem;
       text-align: center;
-      padding: 40px 20px;
-      color: #666;
-      margin-top: 60px;
+      background-color: #fff;
     }
-    footer a {
-      color: #b28b67;
-      margin: 0 10px;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    iframe {
+    .map iframe {
       width: 100%;
+      max-width: 600px;
       height: 300px;
       border: 0;
-      margin-top: 20px;
+      border-radius: 1rem;
     }
-    @media (max-width: 768px) {
-      .menu-item {
-        flex: 1 1 100%;
-      }
-      .gallery img {
-        width: 100%;
-      }
+    footer {
+      background-color: #f0ede9;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">HAIRSALON</div>
-    <nav>
-      <a href="#menu">メニュー</a>
-      <a href="#staff">スタッフ</a>
-      <a href="#access">アクセス</a>
-    </nav>
+    <h1>トヤマの隠れ家美容室</h1>
   </header>
 
-  <div class="hero">
-    <h1>ナチュラルで居心地のいい美容室</h1>
-    <p>女子大生や主婦に人気の空間でキレイを叶えます</p>
-    <a href="#access" class="cta-btn">今すぐ予約する</a>
-  </div>
-
-  <section id="menu">
-    <h2>メニュー</h2>
-    <div class="menu-items">
-      <div class="menu-item">
-        <img src="https://images.pexels.com/photos/3993399/pexels-photo-3993399.jpeg" alt="cut">
-        <h3>カット</h3><p>骨格に合わせたナチュラルスタイルに。</p>
-      </div>
-      <div class="menu-item">
-        <img src="https://images.pexels.com/photos/3319461/pexels-photo-3319461.jpeg" alt="color">
-        <h3>カラー</h3><p>透明感あるトレンドカラーを提案。</p>
-      </div>
-      <div class="menu-item">
-        <img src="https://images.pexels.com/photos/3735646/pexels-photo-3735646.jpeg" alt="treatment">
-        <h3>トリートメント</h3><p>髪の内部から補修し、潤いとツヤを。</p>
-      </div>
-      <div class="menu-item">
-        <img src="https://images.pexels.com/photos/853427/pexels-photo-853427.jpeg" alt="perm">
-        <h3>パーマ</h3><p>自然な動きでこなれ感を演出。</p>
-      </div>
-      <div class="menu-item">
-        <img src="https://images.pexels.com/photos/3993445/pexels-photo-3993445.jpeg" alt="spa">
-        <h3>ヘッドスパ</h3><p>癒しの頭皮ケアでリフレッシュ。</p>
-      </div>
+  <section class="hero">
+    <img src="https://placehold.jp/600x400.png?text=美容室の風景" alt="美容室の写真">
+    <p>主婦や女子大生に大人気。スタイリッシュで居心地のよい空間。</p>
+    <div class="btns">
+      <a href="https://line.me" target="_blank">LINE予約</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="tel:0000000000">電話予約</a>
+      <a href="https://beauty.hotpepper.jp" target="_blank">ホットペッパー</a>
     </div>
   </section>
 
-  <section class="gallery">
-    <h2>店内の雰囲気</h2>
-    <img src="https://images.pexels.com/photos/853427/pexels-photo-853427.jpeg" alt="salon1">
-    <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg" alt="salon2">
-    <img src="https://images.pexels.com/photos/3993446/pexels-photo-3993446.jpeg" alt="salon3">
-    <img src="https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg" alt="salon-outside">
+  <section class="menu">
+    <h2>メニュー & 料金</h2>
+    <div class="menu-grid">
+      <div class="menu-item" style="background-image: url('https://placehold.jp/200x200.png?text=Cut');">カット ¥4,000〜</div>
+      <div class="menu-item" style="background-image: url('https://placehold.jp/200x200.png?text=Color');">カラー ¥6,000〜</div>
+      <div class="menu-item" style="background-image: url('https://placehold.jp/200x200.png?text=Perm');">パーマ ¥7,000〜</div>
+      <div class="menu-item" style="background-image: url('https://placehold.jp/200x200.png?text=Spa');">ヘッドスパ ¥3,000〜</div>
+      <div class="menu-item" style="background-image: url('https://placehold.jp/200x200.png?text=Student');">学割カット ¥3,000〜</div>
+    </div>
   </section>
+
+  <section class="stylists">
+    <h2>スタイリスト紹介</h2>
+    <div class="stylist-grid">
+      <div class="stylist" style="background-image: url('https://placehold.jp/200x200.png?text=Stylist+1');">Ayaka</div>
+      <div class="stylist" style="background-image: url('https://placehold.jp/200x200.png?text=Stylist+2');">Rina</div>
+      <div class="stylist" style="background-image: url('https://placehold.jp/200x200.png?text=Stylist+3');">Miki</div>
+    </div>
+  </section>
+
+  <section class="map">
+    <h2>アクセス</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.917432201286!2d139.7369050760958!3d35.6580344725997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bf07450e1f9%3A0x91fdf5e9330ad511!2z5p2x5Lqs6YO95paw5a6_!5e0!3m2!1sja!2sjp!4v1624978873021!5m2!1sja!2sjp" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <footer>
+    &copy; 2025 トヤマの隠れ家美容室. All rights reserved.
+  </footer>
 </body>
 </html>
-"""
 
-# Save it to a downloadable file
-file_path = "/mnt/data/index.html"
-with open(file_path, "w", encoding="utf-8") as f:
-    f.write(html_code)
-
-file_path
 
 
 
